@@ -12,32 +12,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "alunos")
+@Table ( name = "alunos")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties ( { "hibernateLazyInitializer" , "handler" })
 public class Alunos {
-    
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @GeneratedValue ( strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
 
-    @Column(name = "nome")
+    @Column ( name = "nome")
     private String nome;
 
-    @Column(name = "cpf")
+    @Column ( name = "cpf")
     private String cpf;
 
 
-    @Column(name = "bairro")
+    @Column ( name = "bairro")
     private String bairro;
 
-    @OneToMany(mappedBy = "alunos",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany ( mappedBy = "alunos", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
 
-    private List<AvaliacaoFisica> avaliacaoFisica = new ArrayList<>();
+    private List < AvaliacaoFisica > avaliacaoFisica = new ArrayList <> ( );
 
 }
