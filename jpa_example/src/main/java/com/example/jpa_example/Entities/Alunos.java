@@ -18,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Alunos {
+    
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
