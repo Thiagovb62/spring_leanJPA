@@ -2,6 +2,8 @@ package com.example.jpa_example.Controller;
 
 
 import com.example.jpa_example.Entities.Alunos;
+import com.example.jpa_example.Entities.AvaliacaoFisica;
+import com.example.jpa_example.Form.AlunoForm;
 import com.example.jpa_example.Service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +18,6 @@ public class AlunoController {
     private AlunoService alunoService;
 
 
-
-
     @GetMapping("/list")
     public List < Alunos > getAllAlunos() {
         return alunoService.findAll();
@@ -25,11 +25,11 @@ public class AlunoController {
 
     @GetMapping("/list/{id}")
     public Alunos getAlunoById(@PathVariable Long id) {
-        return alunoService.findById(id);
+        return alunoService.getAlunoById(id);
     }
 
     @PostMapping("/")
-    public Alunos saveAluno(@RequestBody Alunos aluno) {
+    public Alunos saveAluno(@RequestBody AlunoForm aluno) {
         return alunoService.save(aluno);
     }
 
